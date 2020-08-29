@@ -23,4 +23,4 @@ jobs:
         key: ${{ secrets.SSHKey }}
         name: id_rsa
         known_hosts: ${{ secrets.KnownHosts }}
-    - run: bash tools/deploy.sh ${{ secrets.AppServerUsername }} ${{ secrets.AppServerHost }} ~/.ssh/id_rsa node-boilerplate node-boilerplate prod
+    - run: bash tools/deploy.sh ${{ secrets.AppServerUsername }} ${{ secrets.AppServerHost }} ~/.ssh/id_rsa diagonal-rush-backend diagonal-rush-backend prod
