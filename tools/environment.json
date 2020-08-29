@@ -5,6 +5,6 @@
   },
   "production": {
     "NODE_ENV": "production",
-    "PORT": 8080
+    "PORT": 3001
   }
 }
