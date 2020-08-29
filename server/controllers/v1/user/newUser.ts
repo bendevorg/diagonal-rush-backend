@@ -21,7 +21,7 @@ import { Request, Response, NextFunction } from 'express';
 import User from '../../../models/Users';
 
 export default async (req: Request, res: Response, next: NextFunction) => {
-  const { id, device } = req.body;
+  const { id, device } = req.token;
   let user;
   try {
     user = await User.create(id, device);

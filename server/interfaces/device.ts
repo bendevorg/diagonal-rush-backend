@@ -1,11 +1,13 @@
 export interface IDevice {
   name: string;
   model: string;
+  graphics: string;
+  processor: string;
+  operatingSystem: string;
 }
 
 export interface IToken {
   id: string;
-  name: string;
-  model: string;
+  device: IDevice;
   date: string;
 }

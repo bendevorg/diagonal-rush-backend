@@ -27,6 +27,8 @@ export default (
       return res.status(404).json();
     case errors.name.NOT_FOUND:
       return res.status(404).json();
+    case errors.name.INVALID_AUTH:
+      return res.status(403).json();
     default:
       return res.status(500).json({
         data: messages.error.UNEXPECTED_RUNNING,
