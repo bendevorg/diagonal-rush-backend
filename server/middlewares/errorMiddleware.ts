@@ -23,6 +23,10 @@ export default (
       return res.status(400).json({
         data: err.details[0].message,
       });
+    case errors.name.DOCUMENT_NOT_FOUND_ERROR:
+      return res.status(404).json();
+    case errors.name.NOT_FOUND:
+      return res.status(404).json();
     default:
       return res.status(500).json({
         data: messages.error.UNEXPECTED_RUNNING,
