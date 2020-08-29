@@ -1,5 +1,5 @@
 import { Schema } from 'mongoose';
-import DeviceSchema from '../Device/schema';
+import DeviceSchema from '../Devices/schema';
 import { IUserModel } from '../../interfaces/user';
 
 const schema = new Schema({
