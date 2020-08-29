@@ -5,12 +5,11 @@
     "node_modules/**/node_modules"
   ],
   "verbose": true,
-  "execMap": {
-    "ts": "node --require ts-node/register"
-  },
+  "exec": "ts-node --files ./tools/startServer.ts",
   "watch": [
     "server/",
-    "tools/"
+    "tools/",
+    "@types/"
   ],
   "ext": "js,json,ts"
 }
