@@ -9,4 +9,9 @@ export interface IUserModel extends Document {
   chapters: Array<IChapter>;
   createdAt?: Date;
   updatedAt?: Date;
+  completeLevel: (
+    chapterIndex: number,
+    levelIndex: number,
+    collectables: number,
+  ) => Promise<IUserModel>;
 }

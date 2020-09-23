@@ -29,6 +29,12 @@ export default (
       return res.status(404).json();
     case errors.name.INVALID_AUTH:
       return res.status(403).json();
+    case errors.name.INVALID_CHAPTER:
+      return res.status(400).json();
+    case errors.name.INVALID_COLLECTABLES:
+      return res.status(400).json();
+    case errors.name.INVALID_LEVEL:
+      return res.status(400).json();
     default:
       return res.status(500).json({
         data: messages.error.UNEXPECTED_RUNNING,
