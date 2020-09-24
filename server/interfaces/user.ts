@@ -15,3 +15,8 @@ export interface IUserModel extends Document {
     collectables: number,
   ) => Promise<IUserModel>;
 }
+
+export interface IUserPublicData {
+  points: number;
+  chapters: Array<IChapter>;
+}

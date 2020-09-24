@@ -1,4 +1,4 @@
-import { IUserModel } from '../../interfaces/user';
+import { IUserModel, IUserPublicData } from '../../interfaces/user';
 import { IDevice } from '../../interfaces/device';
 import { IChapter } from '../../interfaces/chapter';
 import UserRepository from './repository';
@@ -25,6 +25,13 @@ export default class User {
 
   get chapters(): Array<IChapter> {
     return this.user.chapters;
+  }
+
+  get publicData(): IUserPublicData {
+    return {
+      points: this.user.points,
+      chapters: this.user.chapters,
+    };
   }
 
   completeLevel(
