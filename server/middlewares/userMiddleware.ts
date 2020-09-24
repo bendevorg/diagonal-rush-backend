@@ -23,6 +23,6 @@ export default async (req: Request, _res: Response, next: NextFunction) => {
   if (!user) {
     return next(new NotFound());
   }
-  req.user = user;
+  req.user = new User(user);
   return next();
 };

@@ -1,10 +1,10 @@
-import { IUserModel } from '../../server/interfaces/user';
+import { User } from '../../server/models/Users';
 import { IToken } from '../../server/interfaces/device';
 
 declare global {
   namespace Express {
     interface Request {
-      user: IUserModel;
+      user: User;
       token: IToken;
     }
   }
