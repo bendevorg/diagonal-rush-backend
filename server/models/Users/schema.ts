@@ -42,7 +42,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 1',
             unlocked: true,
             completed: false,
-            collectables: 3,
+            collectables: 1,
             collectablesAcquired: 0,
           },
           {
