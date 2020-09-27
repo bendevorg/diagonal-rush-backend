@@ -69,6 +69,10 @@ export default class User {
         collectables >
         this.user.chapters[chapterIndex].levels[levelIndex].collectablesAcquired
       ) {
+        this.user.points +=
+          collectables -
+          this.user.chapters[chapterIndex].levels[levelIndex]
+            .collectablesAcquired;
         this.user.chapters[chapterIndex].levels[
           levelIndex
         ].collectablesAcquired = collectables;
