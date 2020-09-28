@@ -17,6 +17,14 @@ const schema = new Schema({
     type: Number,
     required: true,
   },
+  createdAt: {
+    type: Date,
+    required: false,
+  },
+  updatedAt: {
+    type: Date,
+    required: false,
+  },
 });
 
 export default schema;
