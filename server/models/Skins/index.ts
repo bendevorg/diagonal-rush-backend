@@ -25,4 +25,16 @@ export default class Skin {
       });
     });
   }
+
+  static retrieveSkins(): Promise<ISkinModel> {
+    return new Promise<ISkinModel>((resolve, reject) => {
+      const repository = new UserRepository();
+      repository.retrieve((err, skins: ISkinModel) => {
+        if (err) {
+          return reject(err);
+        }
+        return resolve(skins);
+      });
+    });
+  }
 }
