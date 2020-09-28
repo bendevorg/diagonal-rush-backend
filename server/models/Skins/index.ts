@@ -3,7 +3,6 @@ import UserRepository from './repository';
 
 export default class Skin {
   static create(
-    _id: string,
     name: string,
     displayName: string,
     price: number,
@@ -11,7 +10,6 @@ export default class Skin {
     return new Promise<ISkinModel>((resolve, reject) => {
       const repository = new UserRepository();
       const skinData = <ISkinModel>{
-        _id,
         name,
         displayName,
         price,
