@@ -33,10 +33,10 @@ import { Request, Response, NextFunction } from 'express';
 import Skins from '../../../models/Skins';
 
 export default async (req: Request, res: Response, next: NextFunction) => {
-  const { id, name, displayName, price } = req.body;
+  const { name, displayName, price } = req.body;
   let skin;
   try {
-    skin = await Skins.create(id, name, displayName, price);
+    skin = await Skins.create(name, displayName, price);
   } catch (err) {
     return next(err);
   }

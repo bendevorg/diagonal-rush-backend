@@ -1,6 +1,7 @@
 import { Schema } from 'mongoose';
 import DeviceSchema from '../Devices/schema';
 import ChapterSchema from '../Chapters/schema';
+import SkinsSchema from '../Skins/schema';
 import { IUserModel } from '../../interfaces/user';
 
 const schema = new Schema({
@@ -18,6 +19,7 @@ const schema = new Schema({
     default: 0,
   },
   chapters: [ChapterSchema],
+  unlockedSkins: [SkinsSchema],
   createdAt: {
     type: Date,
     required: false,
@@ -384,6 +386,14 @@ schema.pre<IUserModel>('save', function pre(next) {
         ],
         unlocked: false,
         completed: false,
+      },
+    ];
+    this.unlockedSkins = [
+      {
+        _id: '5f7283d3225fc94e207b955c',
+        name: 'default',
+        displayName: 'Default',
+        price: 0,
       },
     ];
   } else {

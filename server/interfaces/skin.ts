@@ -1,6 +1,4 @@
-import { Document } from 'mongoose';
-
-export interface ISkinModel extends Document {
+export interface ISkinModel {
   _id: string;
   name: string;
   displayName: string;
