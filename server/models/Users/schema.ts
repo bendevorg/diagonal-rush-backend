@@ -390,10 +390,8 @@ schema.pre<IUserModel>('save', function pre(next) {
     ];
     this.unlockedSkins = [
       {
-        _id: '5f7283d3225fc94e207b955c',
         name: 'default',
         displayName: 'Default',
-        price: 0,
       },
     ];
   } else {
