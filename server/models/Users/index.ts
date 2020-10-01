@@ -95,6 +95,16 @@ export default class User {
     });
   }
 
+  addPoints(amount: number): Promise<IUserModel> {
+    return new Promise<IUserModel>((resolve, reject) => {
+      this.user.points += amount;
+      return this.user
+        .save()
+        .then((user) => resolve(user))
+        .catch((err) => reject(err));
+    });
+  }
+
   static create(_id: string, device: IDevice): Promise<IUserModel> {
     return new Promise<IUserModel>((resolve, reject) => {
       const repository = new UserRepository();

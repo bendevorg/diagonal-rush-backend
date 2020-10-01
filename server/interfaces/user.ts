@@ -14,6 +14,7 @@ export interface IUserModel extends Document {
     levelIndex: number,
     collectables: number,
   ) => Promise<IUserModel>;
+  addPoints: (amount: number) => Promise<IUserModel>;
 }
 
 export interface IUserPublicData {

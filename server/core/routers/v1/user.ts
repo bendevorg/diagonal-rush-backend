@@ -24,5 +24,6 @@ router.patch(
   schemas.levelCompleted,
   controllers.levelCompleted,
 );
+router.get('/give-reward', schemas.giveReward, controllers.giveReward);
 
 export default router;
