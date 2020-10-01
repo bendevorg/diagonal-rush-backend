@@ -28,7 +28,7 @@ export default async (req: Request, res: Response, next: NextFunction) => {
     // @ts-ignore
     const user = new User(await User.findUser(user_id));
     // @ts-ignore
-    await user.addPoints(reward_amount);
+    await user.addPoints(parseInt(reward_amount, 10));
   } catch (err) {
     return next(err);
   }
