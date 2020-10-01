@@ -1,4 +1,4 @@
-import { User } from '../../server/models/Users';
+import User from '../../server/models/Users';
 import { IToken } from '../../server/interfaces/device';
 
 declare global {
