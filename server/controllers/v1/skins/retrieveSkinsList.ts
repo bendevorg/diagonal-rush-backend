@@ -28,8 +28,7 @@
 import { Request, Response } from 'express';
 import Skins from '../../../models/Skins';
 
-export default async (req: Request, res: Response) => {
-  console.log('res', req.body);
+export default async (_req: Request, res: Response) => {
   let skins;
 
   try {
