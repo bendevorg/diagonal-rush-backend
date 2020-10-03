@@ -31,6 +31,7 @@ export default class User {
     return {
       points: this.user.points,
       chapters: this.user.chapters,
+      unlockedSkins: this.user.unlockedSkins,
     };
   }
 

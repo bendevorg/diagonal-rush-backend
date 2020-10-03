@@ -22,4 +22,5 @@ export interface IUserModel extends Document {
 export interface IUserPublicData {
   points: number;
   chapters: Array<IChapter>;
+  unlockedSkins: Array<ISkin>;
 }
