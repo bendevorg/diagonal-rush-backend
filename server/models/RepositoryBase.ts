@@ -39,7 +39,7 @@ export default class Repository<T extends Document>
     conditions: object,
     projection: any,
     options: { lean: true } & Omit<QueryFindBaseOptions, 'lean'>,
-    callback?: (err: any, res: Document | null) => void,
+    callback?: (err: any, res: T | null) => void,
   ): Query<Pick<T, '_id'>> {
     return this._model.findOne(conditions, projection, options, callback);
   }
