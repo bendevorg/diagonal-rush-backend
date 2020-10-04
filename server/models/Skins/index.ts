@@ -15,12 +15,10 @@ export default class Skin {
         price,
       };
 
-      repository.create(skinData, (err, skin) => {
-        if (err) {
-          return reject(err);
-        }
-        return resolve(skin);
-      });
+      return repository
+        .create(skinData)
+        .then((skin) => resolve(skin))
+        .catch((err) => reject(err));
     });
   }
 
@@ -36,11 +34,11 @@ export default class Skin {
     });
   }
 
-  static retrieveSkinByName(name: string): Promise<ISkinModel> {
+  static retrieveSkinByName(name: string): Promise<ISkinModel | null> {
     const query = { name: { $gte: name } };
     const projection = ['name', 'displayName', 'price'];
 
-    return new Promise<ISkinModel>((resolve, reject) => {
+    return new Promise<ISkinModel | null>((resolve, reject) => {
       const repository = new SkinRepository();
       repository.findOne(
         query,

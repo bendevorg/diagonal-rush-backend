@@ -1,4 +1,10 @@
-import { Query, Types, QueryFindBaseOptions, Document } from 'mongoose';
+import {
+  Query,
+  Types,
+  QueryFindBaseOptions,
+  Document,
+  CreateQuery,
+} from 'mongoose';
 
 export interface IRead<T extends Document> {
   retrieve: (callback: (error: any, result: any) => void) => void;
@@ -7,18 +13,18 @@ export interface IRead<T extends Document> {
     conditions: object,
     projection: any,
     options: { lean: true } & Omit<QueryFindBaseOptions, 'lean'>,
-    callback?: (err: any, res: Document | null) => void,
+    callback?: (err: any, res: T | null) => void,
   ): Query<Pick<T, '_id'>>;
   find(
     conditions: object,
     projection: any,
     options: { lean: true } & Omit<QueryFindBaseOptions, 'lean'>,
-    callback?: (err: any, res: Document[] | null) => void,
+    callback?: (err: any, res: T[] | null) => void,
   ): Query<Pick<T, '_id'>[]>;
 }
 
 export interface IWrite<T> {
-  create: (item: T, callback: (error: any, result: any) => void) => void;
+  create: (item: CreateQuery<T>) => Promise<T>;
   update: (
     _id: Types.ObjectId,
     item: T,
