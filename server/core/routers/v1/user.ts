@@ -25,5 +25,12 @@ router.patch(
   controllers.levelCompleted,
 );
 router.get('/give-reward', schemas.giveReward, controllers.giveReward);
+router.patch(
+  '/unlock-skin',
+  tokenValidationMiddleware,
+  userMiddleware,
+  schemas.unlockSkin,
+  controllers.unlockSkin,
+);
 
 export default router;

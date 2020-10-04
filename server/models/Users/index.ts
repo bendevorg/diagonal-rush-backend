@@ -1,6 +1,9 @@
 import { IUserModel, IUserPublicData } from '../../interfaces/user';
 import { IDevice } from '../../interfaces/device';
 import { IChapter } from '../../interfaces/chapter';
+// import { ISkin } from '../../interfaces/skin';
+import Skins from '../Skins';
+
 import UserRepository from './repository';
 import {
   InvalidChapter,
@@ -98,6 +101,20 @@ export default class User {
   addPoints(amount: number): Promise<IUserModel> {
     return new Promise<IUserModel>((resolve, reject) => {
       this.user.points += amount;
+      return this.user
+        .save()
+        .then((user) => resolve(user))
+        .catch((err) => reject(err));
+    });
+  }
+
+  async unlockSkin(name: string): Promise<IUserModel> {
+    const skin = await Skins.retrieveSkinByName(name);
+
+    return new Promise<IUserModel>((resolve, reject) => {
+      this.user.unlockedSkins.push(skin);
+      console.log('------- 1', skin)
+
       return this.user
         .save()
         .then((user) => resolve(user))
