@@ -112,8 +112,10 @@ export default class User {
     const skin = await Skins.retrieveSkinByName(name);
 
     return new Promise<IUserModel>((resolve, reject) => {
+      if (!skin) {
+        return reject();
+      }
       this.user.unlockedSkins.push(skin);
-      console.log('------- 1', skin)
 
       return this.user
         .save()
@@ -131,12 +133,10 @@ export default class User {
         points: 0,
       };
 
-      repository.create(userData, (err, user) => {
-        if (err) {
-          return reject(err);
-        }
-        return resolve(user);
-      });
+      return repository
+        .create(userData)
+        .then((user) => resolve(user))
+        .catch((err) => reject(err));
     });
   }
 
