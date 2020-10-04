@@ -135,7 +135,7 @@ export default class User {
         if (err) {
           return reject(err);
         }
-        return resolve(user);
+        return resolve(user[0]);
       });
     });
   }

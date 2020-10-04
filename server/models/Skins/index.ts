@@ -6,8 +6,8 @@ export default class Skin {
     name: string,
     displayName: string,
     price: number,
-  ): Promise<ISkinModel> {
-    return new Promise<ISkinModel>((resolve, reject) => {
+  ): Promise<ISkinModel[]> {
+    return new Promise<ISkinModel[]>((resolve, reject) => {
       const repository = new SkinRepository();
       const skinData = <ISkinModel>{
         name,
@@ -15,7 +15,7 @@ export default class Skin {
         price,
       };
 
-      repository.create(skinData, (err, skin) => {
+      repository.create(skinData, (err, skin: ISkinModel[]) => {
         if (err) {
           return reject(err);
         }
@@ -50,7 +50,7 @@ export default class Skin {
           if (err) {
             return reject(err);
           }
-          return resolve(skin);
+          return resolve(skin as ISkinModel);
         },
       );
 

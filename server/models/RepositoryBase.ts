@@ -1,16 +1,16 @@
-import { Document, Model, Types, Query, QueryFindBaseOptions } from 'mongoose';
+import { Document, Model, Types, Query, QueryFindBaseOptions, CreateQuery, FilterQuery } from 'mongoose';
 import { IRead, IWrite } from '../interfaces/database';
 
 export default class Repository<T extends Document>
   implements IRead<T>, IWrite<T> {
-  private _model: Model<Document>;
+  private _model: Model<T>;
 
-  constructor(schemaModel: Model<Document>) {
+  constructor(schemaModel: Model<T>) {
     this._model = schemaModel;
   }
 
-  create(item: T, callback: (error: any, result: T) => void) {
-    this._model.create(item, callback);
+  create(item: T, callback: (error: any, result: T[]) => void) {
+    this._model.create(item as CreateQuery<T>, callback);
   }
 
   retrieve(callback: (error: any, result: T) => void) {
@@ -22,11 +22,11 @@ export default class Repository<T extends Document>
     item: T,
     callback: (error: any, result: any) => void,
   ) {
-    this._model.update({ _id }, item, callback);
+    this._model.update({ _id } as FilterQuery<T>, item, callback);
   }
 
   delete(_id: string, callback: (error: any, result: any) => void) {
-    this._model.remove({ _id: this.toObjectId(_id) }, (err) =>
+    this._model.remove({ _id: this.toObjectId(_id) } as FilterQuery<T>, (err) =>
       callback(err, null),
     );
   }
