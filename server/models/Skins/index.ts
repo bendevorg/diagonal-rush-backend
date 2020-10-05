@@ -34,8 +34,8 @@ export default class Skin {
     });
   }
 
-  static retrieveSkinByName(name: string): Promise<ISkinModel | null> {
-    const query = { name: { $gte: name } };
+  static retrieveSkinByName(thisName: string): Promise<ISkinModel | null> {
+    const query = { name: thisName };
     const projection = ['name', 'displayName', 'price'];
 
     return new Promise<ISkinModel | null>((resolve, reject) => {
