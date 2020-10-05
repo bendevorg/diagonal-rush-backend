@@ -51,9 +51,6 @@ export default class Skin {
           return resolve(skin);
         },
       );
-
-      // console.info('blaublaublau', blau);
-      // return blau;
     });
   }
 }
