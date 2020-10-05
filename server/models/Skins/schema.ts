@@ -11,7 +11,7 @@ const schema = new Schema({
   },
   price: {
     type: Number,
-    required: true,
+    required: false,
   },
   createdAt: {
     type: Date,
