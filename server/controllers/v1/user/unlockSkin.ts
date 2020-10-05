@@ -1,15 +1,13 @@
 /**
- * @api {PATCH} /user/level-completed POST Create user
- * @apiName Complete level
+ * @api {PATCH} /user/unlock-skin PATCH Unlock skin
+ * @apiName Unlock Skin
  * @apiGroup user
  * @apiVersion 0.0.1
  *
  * @apiParam {String} Example Example's body string
  * @apiParamExample {json} Request-example:
  * {
- *    chapter: 0,
- *    level: 1,
- *    collectables: 3
+ *    name: "navi"
  * }
  * @apiSuccess (200) {String} user Hey.
  * @apiSuccessExample {json} Success-Response:
