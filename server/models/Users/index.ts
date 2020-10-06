@@ -1,6 +1,9 @@
 import { IUserModel, IUserPublicData } from '../../interfaces/user';
 import { IDevice } from '../../interfaces/device';
 import { IChapter } from '../../interfaces/chapter';
+// import { ISkin } from '../../interfaces/skin';
+import Skins from '../Skins';
+
 import UserRepository from './repository';
 import {
   InvalidChapter,
@@ -106,6 +109,22 @@ export default class User {
     });
   }
 
+  async unlockSkin(name: string): Promise<IUserModel> {
+    const skin = await Skins.retrieveSkinByName(name);
+
+    return new Promise<IUserModel>((resolve, reject) => {
+      if (!skin) {
+        return reject();
+      }
+      this.user.unlockedSkins.push(skin);
+
+      return this.user
+        .save()
+        .then((user) => resolve(user))
+        .catch((err) => reject(err));
+    });
+  }
+
   static create(_id: string, device: IDevice): Promise<IUserModel> {
     return new Promise<IUserModel>((resolve, reject) => {
       const repository = new UserRepository();
@@ -115,12 +134,10 @@ export default class User {
         points: 0,
       };
 
-      repository.create(userData, (err, user) => {
-        if (err) {
-          return reject(err);
-        }
-        return resolve(user);
-      });
+      return repository
+        .create(userData)
+        .then((user) => resolve(user))
+        .catch((err) => reject(err));
     });
   }
 
