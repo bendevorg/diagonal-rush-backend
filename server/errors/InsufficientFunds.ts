@@ -1,9 +1,9 @@
 import { errors } from '../constants';
 
-export default class SkinNotFound extends Error {
+export default class InsufficientFunds extends Error {
   constructor(...args: any[]) {
     super(...args);
-    this.name = errors.name.SKIN_NOT_FOUND;
-    Error.captureStackTrace(this, SkinNotFound);
+    this.name = errors.name.INSUFFICIENT_FUNDS;
+    Error.captureStackTrace(this, InsufficientFunds);
   }
 }
