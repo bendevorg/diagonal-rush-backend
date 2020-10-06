@@ -1,5 +1,6 @@
 import { ISkinModel } from '../../interfaces/skin';
 import SkinRepository from './repository';
+import { SkinNotFound } from '../../errors';
 
 export default class Skin {
   static create(
@@ -34,11 +35,11 @@ export default class Skin {
     });
   }
 
-  static retrieveSkinByName(name: string): Promise<ISkinModel | null> {
-    const query = { name: { $gte: name } };
+  static retrieveSkinByName(thisName: string): Promise<ISkinModel> {
+    const query = { name: thisName };
     const projection = ['name', 'displayName', 'price'];
 
-    return new Promise<ISkinModel | null>((resolve, reject) => {
+    return new Promise<ISkinModel>((resolve, reject) => {
       const repository = new SkinRepository();
       repository.findOne(
         query,
@@ -48,12 +49,12 @@ export default class Skin {
           if (err) {
             return reject(err);
           }
+          if (!skin) {
+            return reject(new SkinNotFound());
+          }
           return resolve(skin);
         },
       );
-
-      // console.info('blaublaublau', blau);
-      // return blau;
     });
   }
 }
