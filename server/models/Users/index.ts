@@ -8,6 +8,7 @@ import {
   InvalidChapter,
   InvalidLevel,
   InvalidCollectables,
+  InsufficientFunds,
 } from '../../errors';
 
 export default class User {
@@ -117,7 +118,12 @@ export default class User {
         return reject(err);
       }
 
+      if (this.user.points < skin.price) {
+        return reject(new InsufficientFunds());
+      }
+      this.user.points -= skin.price;
       this.user.unlockedSkins.push(skin);
+
       return this.user
         .save()
         .then((user) => resolve(user))

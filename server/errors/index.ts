@@ -4,6 +4,7 @@ import InvalidCollectables from './InvalidCollectables';
 import InvalidLevel from './InvalidLevel';
 import NotFound from './NotFound';
 import SkinNotFound from './SkinNotFound';
+import InsufficientFunds from './InsufficientFunds';
 
 export {
   InvalidAuth,
@@ -12,4 +13,5 @@ export {
   InvalidLevel,
   NotFound,
   SkinNotFound,
+  InsufficientFunds,
 };

@@ -36,6 +36,10 @@ export default (
       return res.status(400).json();
     case errors.name.INVALID_LEVEL:
       return res.status(400).json();
+    case errors.name.SKIN_NOT_FOUND:
+      return res.status(404).json();
+    case errors.name.INSUFFICIENT_FUNDS:
+      return res.status(400).json();
     default:
       logger.error(err);
       return res.status(500).json({
