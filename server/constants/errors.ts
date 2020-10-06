@@ -7,5 +7,6 @@ export default {
     INVALID_COLLECTABLES: 'InvalidCollectablesError',
     INVALID_LEVEL: 'InvalidLevelError',
     DOCUMENT_NOT_FOUND_ERROR: 'DocumentNotFoundError',
+    SKIN_NOT_FOUND: 'SkinNotFoundError',
   },
 };
