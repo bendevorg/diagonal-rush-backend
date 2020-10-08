@@ -51,7 +51,8 @@
     ],
     "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "_next" }],
     "@typescript-eslint/naming-convention": "off",
-    "no-async-promise-executor": "off"
+    "no-async-promise-executor": "off",
+    "no-await-in-loop": "off"
   },
   "settings": {
     "import/resolver": {

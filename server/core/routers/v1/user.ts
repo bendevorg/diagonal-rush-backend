@@ -28,7 +28,7 @@ router.patch(
   '/levels-completed',
   tokenValidationMiddleware,
   userMiddleware,
-  // schemas.levelCompleted,
+  schemas.levelsCompleted,
   controllers.levelsCompleted,
 );
 router.get('/give-reward', schemas.giveReward, controllers.giveReward);
