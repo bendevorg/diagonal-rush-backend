@@ -196,7 +196,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 9',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 10,
             collectablesAcquired: 0,
           },
           {
@@ -204,7 +204,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 10',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 10,
             collectablesAcquired: 0,
           },
         ],
@@ -220,7 +220,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 1',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 5,
             collectablesAcquired: 0,
           },
           {
@@ -228,7 +228,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 2',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 5,
             collectablesAcquired: 0,
           },
           {
@@ -236,7 +236,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 3',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 10,
             collectablesAcquired: 0,
           },
           {
@@ -244,7 +244,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 4',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 6,
             collectablesAcquired: 0,
           },
           {
@@ -252,7 +252,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 5',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 9,
             collectablesAcquired: 0,
           },
           {
@@ -260,7 +260,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 6',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 8,
             collectablesAcquired: 0,
           },
           {
@@ -268,7 +268,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 7',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 8,
             collectablesAcquired: 0,
           },
           {
@@ -276,7 +276,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 8',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 6,
             collectablesAcquired: 0,
           },
           {
@@ -284,7 +284,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 9',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 8,
             collectablesAcquired: 0,
           },
           {
@@ -292,7 +292,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 10',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 8,
             collectablesAcquired: 0,
           },
         ],
@@ -308,7 +308,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 1',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 4,
             collectablesAcquired: 0,
           },
           {
@@ -316,7 +316,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 2',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 8,
             collectablesAcquired: 0,
           },
           {
@@ -324,7 +324,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 3',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 7,
             collectablesAcquired: 0,
           },
           {
@@ -332,7 +332,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 4',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 6,
             collectablesAcquired: 0,
           },
           {
@@ -340,7 +340,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 5',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 7,
             collectablesAcquired: 0,
           },
           {
@@ -348,7 +348,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 6',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 9,
             collectablesAcquired: 0,
           },
           {
@@ -356,7 +356,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 7',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 9,
             collectablesAcquired: 0,
           },
           {
@@ -364,7 +364,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 8',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 8,
             collectablesAcquired: 0,
           },
           {
@@ -372,7 +372,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 9',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 8,
             collectablesAcquired: 0,
           },
           {
@@ -380,7 +380,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 10',
             unlocked: false,
             completed: false,
-            collectables: 3,
+            collectables: 8,
             collectablesAcquired: 0,
           },
         ],
