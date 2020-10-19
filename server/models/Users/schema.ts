@@ -196,7 +196,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 9',
             unlocked: false,
             completed: false,
-            collectables: 10,
+            collectables: 8,
             collectablesAcquired: 0,
           },
           {
@@ -204,7 +204,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 10',
             unlocked: false,
             completed: false,
-            collectables: 10,
+            collectables: 9,
             collectablesAcquired: 0,
           },
         ],
@@ -236,7 +236,7 @@ schema.pre<IUserModel>('save', function pre(next) {
             name: 'Level 3',
             unlocked: false,
             completed: false,
-            collectables: 10,
+            collectables: 9,
             collectablesAcquired: 0,
           },
           {
